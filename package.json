@@ -1,0 +1,19 @@
+{
+  "name": "collaborative-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @collaborative-workspace/client\" \"npm run dev --workspace @collaborative-workspace/server\"",
+    "dev:client": "npm run dev --workspace @collaborative-workspace/client",
+    "dev:server": "npm run dev --workspace @collaborative-workspace/server",
+    "build": "npm run build --workspaces",
+    "check": "npm run check --workspaces"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
